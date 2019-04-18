@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Trang chủ</title>
+	<link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+	<img src="img/cutebaby.png" width="20%"/>
+	<h3>DANH SÁCH ADMIN</h3>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">Tên đăng nhập</th>
+				<th class="text-center">Họ tên</th>
+				<th class="text-center">Số điện thoại</th>
+				<th class="text-center">Email</th>
+				<th class="text-center">Địa chỉ</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="admin,pos : ${listAdmin}">
+				<td th:text="${admin.gettendangnhap()}"></td>
+				<td th:text="${admin.gethoten()}"></td>
+				<td th:text="${admin.getsdt()}"></td>
+				<td th:text="${admin.getemail()}"></td>
+				<td th:text="${admin.getdiachi()}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
